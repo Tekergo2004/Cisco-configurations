@@ -65,9 +65,16 @@ ip sla schedule 4 life forever start-time now
 
 ```cisco
 track 1 ip sla 1 reachability
+exit
+
 track 2 ip sla 2 reachability
+exit
+
 track 3 ip sla 3 reachability
+exit
+
 track 4 ip sla 4 reachability
+exit
 ```
 
 ```cisco
