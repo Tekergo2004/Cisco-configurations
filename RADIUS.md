@@ -13,3 +13,10 @@ aaa group server radius HQ-RADIUS
 aaa authentication login default group HQ-RADIUS local
 aaa authorization exec default group HQ-RADIUS local
 ```
+
+> [!NOTE]
+> Create backup user
+
+```cisco
+username backup priv 15 password Passw0rd
+```
