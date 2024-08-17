@@ -1,6 +1,6 @@
 # HSRP configuration
 
-## 1. step: Default
+## 1. step: Default (R1)
 
 > [!NOTE]
 > Default configuration for Cisco HSRP.
@@ -29,7 +29,7 @@ standby 4 authentication Passw0rd
 exit
 ```
 
-## 2. step: Tracking (on your active router)
+## 2. step: Tracking (on your active router - (R1)) 
 
 > [!NOTE]
 > Enchaned tracking configuration for HSRP.
@@ -80,22 +80,50 @@ exit
 ```cisco
 int vlan 118
 standby 1 preempt
-standby 1 track 1 decrement 20
-standby 1 track 3 decrement 20
+standby 1 track 1 decrement 10
+standby 1 track 3 decrement 10
 standby 2 preempt
-standby 2 track 2 decrement 20
-standby 2 track 4 decrement 20
+standby 2 track 2 decrement 10
+standby 2 track 4 decrement 10
 exit
 ```
 
 ```cisco
 int vlan 202
 standby 3 preempt
-standby 3 track 1 decrement 20
-standby 3 track 3 decrement 20
+standby 3 track 1 decrement 10
+standby 3 track 3 decrement 10
 standby 4 preempt
-standby 4 track 2 decrement 20
-standby 4 track 4 decrement 20
+standby 4 track 2 decrement 10
+standby 4 track 4 decrement 10
 exit
 ```
 
+## 3. step: Configure more router (R2)
+
+> [!NOTE]
+> You will have at least on other Cisco router running HSRP, what will be your standby router.
+
+```cisco
+int vlan 118
+standby v 2
+standby 1 prio 100
+standby 1 ip 10.2.118.254
+standby 1 authentication Passw0rd
+standby 2 prio 100
+standby 2 ipv6 fe80:2:118::1
+standby 2 authentication Passw0rd
+exit
+```
+
+```cisco
+int vlan 202
+standby v 2
+standby 3 prio 100
+standby 3 ip 10.2.202.254
+standby 3 authentication Passw0rd
+standby 4 prio 100
+standby 4 ipv6 fe80:2:202::1
+standby 4 authentication Passw0rd
+exit
+```
