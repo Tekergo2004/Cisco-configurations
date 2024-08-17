@@ -25,3 +25,12 @@ ipv6 ospf 42 area 0
 no sh
 exit
 ```
+
+
+> [!NOTE]
+> Enable password authentication, you have to do it on every ospf interface
+
+```cisco
+router ospv3 42
+area 10 authentication ipsec spi 256 md5 0 1234567891234567912345678912345
+```
