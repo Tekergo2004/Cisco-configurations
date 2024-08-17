@@ -29,7 +29,7 @@ standby 4 authentication Passw0rd
 exit
 ```
 
-## 2. step: Tracking 
+## 2. step: Tracking (on your active router)
 
 > [!NOTE]
 > Enchaned tracking configuration for HSRP.
@@ -74,17 +74,21 @@ track 4 ip sla 4 reachability
 int vlan 118
 standby 1 preempt
 standby 1 track 1 decrement 20
+standby 1 track 3 decrement 20
 standby 2 preempt
-standby 2 track 1 decrement 20
+standby 2 track 2 decrement 20
+standby 2 track 4 decrement 20
 exit
 ```
 
 ```cisco
 int vlan 202
-standby 1 preempt
-standby 1 track 1 decrement 20
-standby 2 preempt
-standby 2 track 1 decrement 20
+standby 3 preempt
+standby 3 track 1 decrement 20
+standby 3 track 3 decrement 20
+standby 4 preempt
+standby 4 track 2 decrement 20
+standby 4 track 4 decrement 20
 exit
 ```
 
