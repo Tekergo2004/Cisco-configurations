@@ -1,5 +1,8 @@
 # RADIUS
 
+> [!NOTE]
+> Set up Radius login.
+
 ```cisco
 aaa new-model
 
