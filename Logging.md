@@ -1,3 +1,8 @@
+# Logging
+
+> [!NOTE]
+> Sending system log messeages to a server.
+
 ```cisco
 logging trap debugging
 logging facility local6
