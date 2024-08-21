@@ -4,6 +4,10 @@
 > This is a full configuartion for DMVPN, it's keys from <a href="https://github.com/Tekergo2004/Cisco-configurations/blob/main/IKEv2-IPSec.md">IKEv2-IPSec.md</a> and EIGRP is from <a href="https://github.com/Tekergo2004/Cisco-configurations/blob/main/EIGRP.md">EIGRP.md</a>
 
 ```cisco
+ip forward-protocol nd
+```
+
+```cisco
 interface Tunnel1
  ip address 10.200.1.1 255.255.255.0
  no ip redirects
