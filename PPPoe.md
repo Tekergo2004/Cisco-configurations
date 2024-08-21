@@ -9,6 +9,11 @@
 ip local pool PPPOEPool 35.44.12.1 35.44.12.30
 ```
 
+
+```cisco
+username client password Passw0rd
+```
+
 ```cisco
 interface Virtual-Template1
  mtu 1492
