@@ -7,6 +7,8 @@
 key chain EIGRP
  key 1
   key-string Passw0rd
+ exit
+exit
 ```
 
 ```cisco
@@ -18,11 +20,13 @@ router eigrp 65100
  network 10.255.10.1 0.0.0.0
  eigrp stub connected summary
  redistribute ospf 42
+exit
 ```
 
 ```cisco
 int g0/0
-#ip authentication key-chain eigrp 65100 EIGRP
+ ip authentication key-chain eigrp 65100 EIGRP
+exit
 ```
 
 
