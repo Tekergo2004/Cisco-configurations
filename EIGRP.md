@@ -17,6 +17,7 @@ router eigrp 65100
  network 10.200.2.0 0.0.0.255
  network 10.255.10.1 0.0.0.0
  eigrp stub connected summary
+ redistribute ospf 42
 ```
 
 
