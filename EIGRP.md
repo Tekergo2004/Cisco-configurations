@@ -20,6 +20,11 @@ router eigrp 65100
  redistribute ospf 42
 ```
 
+```cisco
+int g0/0
+#ip authentication key-chain eigrp 65100 EIGRP
+```
+
 
 > ez a parancs meg kell
 ```cisco
