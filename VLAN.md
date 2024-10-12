@@ -49,3 +49,11 @@ sw trunk al vl 100,101,102
 sw trunk nat vl 99
 ```
 
+> [!NOTE]
+> If you get an error because of dot1q encapsulation then you can switch to that with the following command. 
+
+```cisco
+int t0/1
+sw trunk enc dot1q
+```
+
