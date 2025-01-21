@@ -30,7 +30,10 @@ interface Tunnel1
   tunnel mode gre multipoint
   tunnel key 100000
   tunnel protection ipsec profile DMVPN
-exit
+
+router eigrp 100
+  network 10.0.0.0 0.0.0.255
+  network 192.168.0.0 0.0.0.255
 ```
 
 ```cisco
@@ -63,7 +66,6 @@ interface Tunnel1
   tunnel protection ipsec profile DMVPN
   no ip split-horizon eigrp 100
   no ip next-hop-self eigrp 100
-exit
 
 router eigrp 100
   network 10.0.0.0 0.0.0.255
