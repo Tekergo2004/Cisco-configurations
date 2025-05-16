@@ -35,7 +35,12 @@ interface Dialer1
  mtu 1492
  ip address negotiated
  encapsulation ppp
- dialer pool 1
+ dialer pool x
  ppp pap sent-username customer password 0 Passw0rd
  ppp ipcp route default
+```
+
+```cisco
+interface link-to-pppoe-server
+ pppoe-client dial-pool-number x
 ```
